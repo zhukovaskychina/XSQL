@@ -1,0 +1,42 @@
+//
+// Created by zhukovasky on 2020/9/30.
+//
+
+#include <common/Exceptions.h>
+#include "SqlErrorListener.h"
+
+SQLErrorListener::~SQLErrorListener() {
+
+}
+
+void SQLErrorListener::syntaxError(antlr4::Recognizer *recognizer, antlr4::Token *offendingSymbol, size_t line,
+                                   size_t charPositionInLine, const std::string &msg, std::exception_ptr e) {
+
+    std::cerr<<"语法解析异常:"<<msg<<std::endl;
+
+    throw  SyntaxParseException(msg);
+  //  throw MySQLErrorCode ::ER_PARSE_ERROR;
+}
+
+void SQLErrorListener::reportAmbiguity(antlr4::Parser *recognizer, const antlr4::dfa::DFA &dfa, size_t startIndex,
+                                       size_t stopIndex, bool exact, const antlrcpp::BitSet &ambigAlts,
+                                       antlr4::atn::ATNConfigSet *configs) {
+
+}
+
+void SQLErrorListener::reportAttemptingFullContext(antlr4::Parser *recognizer, const antlr4::dfa::DFA &dfa,
+                                                   size_t startIndex, size_t stopIndex,
+                                                   const antlrcpp::BitSet &conflictingAlts,
+                                                   antlr4::atn::ATNConfigSet *configs) {
+
+}
+
+void
+SQLErrorListener::reportContextSensitivity(antlr4::Parser *recognizer, const antlr4::dfa::DFA &dfa, size_t startIndex,
+                                           size_t stopIndex, size_t prediction, antlr4::atn::ATNConfigSet *configs) {
+
+}
+
+SQLErrorListener::SQLErrorListener() {
+
+}

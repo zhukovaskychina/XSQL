@@ -1,0 +1,14 @@
+//
+// Created by zhukovasky on 2020/9/29.
+//
+
+#ifndef MYSQL_PARSER_SELECTSTATEMENTLISTENER_H
+#define MYSQL_PARSER_SELECTSTATEMENTLISTENER_H
+
+
+class SelectStatementListener {
+
+};
+
+
+#endif //MYSQL_PARSER_SELECTSTATEMENTLISTENER_H
